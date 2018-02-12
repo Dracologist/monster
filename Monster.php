@@ -3,15 +3,17 @@
 
 class Monster
 {
-    var $name;
+    private $_name;
+    var $test_name;
 
     function setName($new_mon_name){
-        $this->name = $new_mon_name;
+        $this->_name = $new_mon_name;
+        $this->test_name = $new_mon_name;
     }
     function getName(){
-        return $this->name;
+        return $this->_name;
     }
     function attack(){
-        echo $this->name." is attacking";
+        echo $this->getName()." is attacking!";
     }
 }

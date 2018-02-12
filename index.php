@@ -8,17 +8,18 @@
 <body>
 <p>
     <?php
+    error_reporting(E_ALL);
     include("MonsterBash.php");
 
-    $test = new MonsterBash();
+    $test_mon = new MonsterBash();
     echo "<br>";
-    $test->testConstructor();
+    $test_mon->testSetName();
     echo "<br>";
-    $test->testSetName();
+    $test_mon->testGetName();
     echo "<br>";
-    $test->testGetName();
+    $test_mon->testAttack();
     echo "<br>";
-    $test->testAttack();
+    $test_mon->testGetVictims();
     ?>
 </p>
 </body>

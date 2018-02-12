@@ -6,29 +6,45 @@
  * Time: 1:56 PM
  */
 include("Monster.php");
+include("Vampire.php");
 
 class MonsterBash
 {
+    private $_mon;
+    private $_vamp;
+
+    function __construct()
+    {
+        $this->testConstructor();
+    }
+
     function testConstructor(){
-        $test_mon = new Monster;
-        if(isset($test_mon)) {
-            echo "Monster made!";
+        $this->_mon = new Monster;
+        $this->_vamp = new Vampire("Dracula");
+        if(isset($this->_mon)) {
+            echo "Monster made!<br>";
+        }
+        if(isset($this->_vamp)) {
+            echo "Vampire made!<br>";
+            echo "Vampire Name: ".$this->_vamp->test_name;
         }
     }
     function testSetName(){
-        $test_mon = new Monster;
-        $test_mon->setName("Moogle");
-        echo $test_mon->name;
+        $this->_mon->setName("Moogle");
+        $this->_vamp->setName("Nosferatu");
+        echo "Set Monster Name: ".$this->_mon->test_name;
+        echo "<br>Set Vampire Name: ".$this->_vamp->test_name;
     }
     function testGetName(){
-        $test_mon = new Monster;
-        echo $test_mon->getName();
-        $test_mon->setName("Moogle");
-        echo $test_mon->getName();
+        echo "Got Monster Name: ".$this->_mon->getName();
+        echo "<br>Got Vampire Name: ".$this->_vamp->getName();
     }
     function testAttack(){
-        $test_mon = new Monster;
-        $test_mon->setName("Moogle");
-        $test_mon->attack();
+        $this->_mon->attack();
+        echo "<br>";
+        $this->_vamp->attack();
+    }
+    function testGetVictims(){
+        echo $this->_vamp->getVictims();
     }
 }
