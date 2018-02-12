@@ -8,6 +8,7 @@
 <body>
 <p>
     <?php
+
     error_reporting(E_ALL);
     include("MonsterBash.php");
 
@@ -20,6 +21,9 @@
     $test_mon->testAttack();
     echo "<br>";
     $test_mon->testGetVictims();
+    echo "<br>";
+    $test_mon->testTransform();
+
     ?>
 </p>
 </body>

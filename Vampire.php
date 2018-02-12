@@ -8,9 +8,9 @@
 
 class Vampire extends Monster
 {
-    private $_name;
+
     private $_victims;
-    var $test_name;
+
     function __construct($vampire_name) {
         parent::setName($vampire_name);
         $this->_victims = 0;
